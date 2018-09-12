@@ -5,6 +5,8 @@
  */
 package Latihan;
 
+import java.util.Scanner;
+
 /**
  *
  * @author user
@@ -24,4 +26,12 @@ public class HitungFibonacci {
         String identitas = "Najwa Kusuma Mustafa / X RPL 5 / 28";
         tampilJudul(identitas);
     }
+    private static int tampilInput(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Bilangan ke-: ");
+        int n = scanner.nextInt();
+        
+        return n;
+    }
+ int n = tampilInput();   
 }
