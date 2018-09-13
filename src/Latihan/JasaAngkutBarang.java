@@ -17,18 +17,25 @@ public class JasaAngkutBarang {
           System.out.println("identitas : " + identitas);
           
           Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan berat barang : ");
-        int barang = scanner.nextInt();
+          String jenis[] = new String[]{"E", "B", "A", "D", "C"};
         int berat[] = new int[]{7, 5, 4, 3, 2};
         int bayaran[] = new int[]{10000, 7000, 5000, 3000, 2000};
+        int harga;
+        int total = 0;
         int jumlah;
+        System.out.print("Masukkan berat barang : ");
+        int barang = scanner.nextInt();
         
-        for (int i = 0; i < bayaran.length; i++){
+        for (int i = 0; i < jenis.length; i++){
             if(barang >= berat[i]){
                 jumlah = barang / berat[i];
                 barang = barang % berat[i];
-                System.out.println("bayaran " + bayaran[i]+" sebanyak " +jumlah+" keping");
+                harga = jumlah * bayaran[i];
+                total += harga;
+                System.out.println("jenis " + jenis[i]+" sebanyak " +jumlah);
+                System.out.println("Bayaran : Rp. "+harga);
             }
         }
+        System.out.println("Total bayaran : Rp. "+ total);
     }
 }
